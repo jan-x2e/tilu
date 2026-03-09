@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruokalista – Suutarilan peruskoulu, Nummi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --ruutu: #1a1a2e;
+            --pinta: #16213e;
+            --kortti: #0f3460;
+            --korostus: #e94560;
+            --teksti: #eaeaea;
+            --muted: #8892a4;
+            --radius: 16px;
+        }
+
+        body {
+            background: var(--ruutu);
+            color: var(--teksti);
+            font-family: 'DM Sans', sans-serif;
+            min-height: 100vh;
+            padding: 2rem 1rem 4rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        header h1 {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 700;
+            line-height: 1.1;
+            color: #fff;
+        }
+
+        header h1 span {
+            color: var(--korostus);
+        }
+
+        .alaotsikko {
+            margin-top: 0.5rem;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .viikko-badge {
+            display: inline-block;
+            margin-top: 1rem;
+            background: var(--kortti);
+            border: 1px solid var(--korostus);
+            color: var(--korostus);
+            padding: 0.3rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.25rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .kortti {
+            background: var(--pinta);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            position: relative;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .kortti:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
+        .paiva-otsikko {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .paiva-nimi {
+            font-family: 'Fraunces', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .paiva-pvm {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .ruokalista {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .ruokalista li {
+            font-size: 0.9rem;
+            color: var(--teksti);
+            padding-left: 1rem;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .ruokalista li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: var(--korostus);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+
+        footer a {
+            color: var(--korostus);
+            text-decoration: none;
+        }
+
+        .ei-dataa {
+            color: var(--muted);
+            text-align: center;
+            grid-column: 1/-1;
+            padding: 3rem;
+        }
+
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Suutarilan peruskoulu<span>,</span><br>Nummi</h1>
+        <p class="alaotsikko">Palvelukeskus Helsinki</p>
+        <div class="viikko-badge">Viikko 10</div>
+    </header>
+
+    <main class="grid">
+        
+        <div class="kortti">
+            <div class="paiva-otsikko">
+                <span class="paiva-nimi">Maanantai</span>
+                <span class="paiva-pvm">2.3.2026</span>
+            </div>
+            <ul class="ruokalista">
+                <li>Kukkakaali-juustokroketit </li>
+<li>Perunasosetta </li>
+<li>Italialaista tomaattikastiketta </li>
+<li>Bolognesepyörykät </li>
+
+            </ul>
+        </div>
+        
+        <div class="kortti">
+            <div class="paiva-otsikko">
+                <span class="paiva-nimi">Tiistai</span>
+                <span class="paiva-pvm">3.3.2026</span>
+            </div>
+            <ul class="ruokalista">
+                <li>Juures-linssilasagnettea </li>
+<li>Ketsuppia </li>
+<li>Tortillat </li>
+<li>Härkistäyte tortilloille </li>
+<li>Kermaviiliä </li>
+
+            </ul>
+        </div>
+        
+        <div class="kortti">
+            <div class="paiva-otsikko">
+                <span class="paiva-nimi">Keskiviikko</span>
+                <span class="paiva-pvm">4.3.2026</span>
+            </div>
+            <ul class="ruokalista">
+                <li>Hernerouhebolognesea </li>
+<li>Tummaa sarvipastaa </li>
+<li>Ketsuppia </li>
+<li>Broilerinjauheliharagua </li>
+
+            </ul>
+        </div>
+        
+        <div class="kortti">
+            <div class="paiva-otsikko">
+                <span class="paiva-nimi">Torstai</span>
+                <span class="paiva-pvm">5.3.2026</span>
+            </div>
+            <ul class="ruokalista">
+                <li>Härkiskeittoa </li>
+<li>Sekaleipää </li>
+<li>Juustoa </li>
+<li>Bataatti-perunasosekeittoa </li>
+
+            </ul>
+        </div>
+        
+        <div class="kortti">
+            <div class="paiva-otsikko">
+                <span class="paiva-nimi">Perjantai</span>
+                <span class="paiva-pvm">6.3.2026</span>
+            </div>
+            <ul class="ruokalista">
+                <li>Kasvis-kikhernekiusausta </li>
+<li>Yrttijuureksia </li>
+<li>Ruisleipää </li>
+<li>Kirjolohikiusausta </li>
+
+            </ul>
+        </div>
+        
+    </main>
+
+    <footer>
+        <p>Päivitetty 2.3.2026 klo 12:03 &nbsp;·&nbsp; <a href="https://aromi.hel.fi/AromieMenus/FI/Default/PALKE/KeMenu113/Page/Restaurant" target="_blank">Lähde: aromi.hel.fi</a></p>
+    </footer>
+</body>
+</html>
